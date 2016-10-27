@@ -1,10 +1,6 @@
 Web Service - API Twitter
 ========================
-
-Installation?
---------------
-
-
+Projet destiné au cours du web service a l'EPSI.
 
 Configuration?
 --------------
