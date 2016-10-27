@@ -2,18 +2,18 @@ Web Service - API Twitter (Symfony 3)
 ========================
 Projet destiné au cours du web service a l'EPSI.
 
-Requirements?
+Requirements
 --------------
 
 * php
 * composer -> https://getcomposer.org/
 
-Installation?
+Installation
 --------------
 Utiliser composer pour installer toutes les dépendances dont le projet a besoin.
 
 
-Configuration?
+Configuration
 --------------
 
 ###app/config/config.yml
