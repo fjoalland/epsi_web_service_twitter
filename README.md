@@ -1,4 +1,4 @@
-Web Service - API Twitter
+Web Service - API Twitter (Symfony 3)
 ========================
 Projet destiné au cours du web service a l'EPSI.
 
