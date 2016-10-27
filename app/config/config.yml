@@ -70,7 +70,7 @@ swiftmailer:
     spool:     { type: memory }
 
 endroid_twitter:
-    consumer_key: "tshCwugWzVw0s6PktfirPPBxH"
-    consumer_secret: "dXHFducL0YAXDouezp4vayWbCIGvBFzMI7WKsHzLOTVYKF8XOQ"
-    access_token: "781117636969111552-iu5jEcbf7yk2U0W4LjgYzPa4nLwsihT"
-    access_token_secret: "8T9AHVHGVoJ4EIoU5FHgHCNXRC9ucAgOOsu8p6IvtVxNY"
+    consumer_key: "..."
+    consumer_secret: "..."
+    access_token: "..."
+    access_token_secret: "..."

@@ -1,68 +1,107 @@
-Symfony Standard Edition
+Web Service - API Twitter
 ========================
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
-
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
-
-What's inside?
+Installation?
 --------------
 
-The Symfony Standard Edition is configured with the following defaults:
 
-  * An AppBundle you can use to start coding;
 
-  * Twig as the only configured template engine;
+Configuration?
+--------------
 
-  * Doctrine ORM/DBAL;
+##config.yml
 
-  * Swiftmailer;
+```yaml
+endroid_twitter:
+    consumer_key: "..."
+    consumer_secret: "..."
+    access_token: "..."
+    access_token_secret: "..."
+```
 
-  * Annotations enabled for everything.
+##parameters.yml
 
-It comes pre-configured with the following bundles:
+```yaml
+parameters:
+    database_host: ...
+    database_port: ...
+    database_name: ...
+    database_user: ...
+    database_password: ...
+    mailer_transport: ...
+    mailer_host: ...
+    mailer_user: ...
+    mailer_password: ...
+    secret: ...
+```
 
-  * **FrameworkBundle** - The core Symfony framework bundle
+##Create Database Mysql
 
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
+```mysql
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
+--
+-- Database: `epsi`
+--
 
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
+-- --------------------------------------------------------
 
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
+--
+-- Table structure for table `tweet`
+--
 
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
+CREATE TABLE `tweet` (
+  `idtweet` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `datetest` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idTwitter` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
+-- --------------------------------------------------------
 
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
+--
+-- Table structure for table `user`
+--
 
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
+CREATE TABLE `user` (
+  `idTwitter` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `screenname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fullname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `urlphoto` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-  * [**SensioGeneratorBundle**][13] (in dev/test env) - Adds code generation
-    capabilities
+--
+-- Indexes for dumped tables
+--
 
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
+--
+-- Indexes for table `tweet`
+--
+ALTER TABLE `tweet`
+  ADD PRIMARY KEY (`idtweet`),
+  ADD KEY `IDX_3D660A3B6D31044` (`idTwitter`);
 
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`idTwitter`),
+  ADD UNIQUE KEY `UNIQ_8D93D6496D31044` (`idTwitter`);
 
-Enjoy!
+--
+-- Constraints for dumped tables
+--
 
-[1]:  https://symfony.com/doc/3.0/book/installation.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/3.0/book/doctrine.html
-[8]:  https://symfony.com/doc/3.0/book/templating.html
-[9]:  https://symfony.com/doc/3.0/book/security.html
-[10]: https://symfony.com/doc/3.0/cookbook/email.html
-[11]: https://symfony.com/doc/3.0/cookbook/logging/monolog.html
-[13]: https://symfony.com/doc/3.0/bundles/SensioGeneratorBundle/index.html
+--
+-- Constraints for table `tweet`
+--
+ALTER TABLE `tweet`
+  ADD CONSTRAINT `FK_3D660A3B6D31044` FOREIGN KEY (`idTwitter`) REFERENCES `user` (`idTwitter`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+```
