@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/bower_components/semantic/dist/semantic.css') }}" />
+        {% endblock %}
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+
+    <div class="ui inverted menu">
+        <a href="{{ path('homeTweet')}}"  class="yellow item">Accueil</a>
+        <a  href="{{ path('tweets_show')}}" class="red item">Tweets sauvegardés</a>
+        <a href="{{ path('users_show')}}"  class="orange item">Utilisateur sauvegardés</a>
+    </div>
+    <div class="ui container segment">
+        <h2 class="ui header">{% block titleheader %}{% endblock %}</h2>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <script src="{{ asset("bundles/epsitwitterapi/js/tweet.js") }}"></script>
+        {% endblock %}
+    </div>
+
+    </body>
+</html>

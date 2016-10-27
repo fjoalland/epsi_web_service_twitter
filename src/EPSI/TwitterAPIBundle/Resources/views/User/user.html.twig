@@ -1,0 +1,29 @@
+
+{% extends "base.html.twig" %}
+
+{% block stylesheets %} {{ parent() }} {% endblock %}
+{% block body %}
+    <h2 class="ui header">User</h2>
+    <div class="ui celled list">
+            <div class="item">
+                <img class="ui avatar image" src="{{ user.urlphoto }}">
+                <div class="content">
+                    <a class="header" href="{{ path('oneUser_show', {'id': user.idTwitter}) }}">@{{  user.screenname }}, {{ user.fullname }} </a>
+                </div>
+            </div>
+    </div>
+
+    <div class="ui celled list">
+        {% for tweet in user.tweets %}
+
+            <div class="item">
+                <div class="content">
+                    <div class="description">{{ tweet.text }}, <a>{{ tweet.datepost }} </a></div>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

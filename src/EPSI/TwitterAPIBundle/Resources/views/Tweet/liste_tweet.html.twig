@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %} {{ parent() }} {% endblock %}
+{% block body %}
+
+    <h2 class="ui header">Liste des tweets sauvegardés </h2>
+    <div class="ui celled list">
+    {% for tweet in tweets %}
+
+        <div class="item">
+
+            <div class="right floated content">
+                <button class="remove ui button" route="{{ path('removeTweet', {'id': tweet.idtweet}) }}" >Supprimer</button>
+            </div>
+
+            <img class="ui avatar image" src="{{ tweet.user.urlphoto }}">
+
+            <div class="content">
+                <a class="header" href="{{ path('oneTweet_show', {'id': tweet.idtweet}) }}">@{{  tweet.user.screenname }}</a>
+                <div class="description">{{ tweet.text }}, <a>{{ tweet.datepost }} </a></div>
+            </div>
+        </div>
+
+    {% endfor %}
+    </div>
+
+{% endblock %}
+

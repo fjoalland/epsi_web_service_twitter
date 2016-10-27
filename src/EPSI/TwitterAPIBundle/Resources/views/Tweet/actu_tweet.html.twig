@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %} {{ parent() }} {% endblock %}
+{% block body %}
+
+    <h2 class="ui header">50 derniers tweet</h2>
+    <div class="ui celled list">
+    {% for tweet in tweets %}
+
+            <div class="item">
+
+                <div class="right floated content">
+                    <button class="save_tweet ui button" route="{{ path('saveTweet', {'id': tweet.id}) }}" >Sauvegarder</button>
+                </div>
+
+                <img class="ui avatar image" src="{{ tweet.user.profile_image_url }}">
+
+                <div class="content">
+                    <a class="header" href="{{ path('oneTweet_show', {'id': tweet.id}) }}">@{{  tweet.user.screen_name }}</a>
+                    <div class="description">{{ tweet.text }}, <a>{{ tweet.created_at }} </a></div>
+                </div>
+            </div>
+
+    {% endfor %}
+    </div>
+
+{% endblock %}
+

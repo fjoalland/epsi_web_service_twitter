@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %} {{ parent() }} {% endblock %}
+{% block body %}
+    <h2 class="ui header">Liste des utilisateurs sauvegardés</h2>
+    <div class="ui celled list">
+        {% for user in users %}
+
+            <div class="item">
+
+                <div class="right floated content">
+                    <button class="remove ui button" route="{{ path('removeUser', {'id': user.idTwitter}) }}" >Supprimer</button>
+                    <a class="ui button" href="{{ path('oneUser_show', {'id': user.idTwitter}) }}" >Voir</a>
+
+                </div>
+
+                <img class="ui avatar image" src="{{ user.urlphoto }}">
+
+                <div class="content">
+                    @{{  user.screenname }}, {{ user.fullname }}
+                </div>
+            </div>
+
+        {% endfor %}
+
+
+    </div>
+
+{% endblock %}
+

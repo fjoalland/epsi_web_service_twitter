@@ -1,0 +1,9 @@
+
+epsi_twitter_api:
+    resource: "@EPSITwitterAPIBundle/Controller/"
+    type:     annotation
+    prefix:   /twitterapi
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

@@ -1,0 +1,4 @@
+services:
+#    epsi_twitter_api.example:
+#        class: EPSI\TwitterAPIBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
