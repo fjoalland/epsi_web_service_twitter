@@ -16,7 +16,7 @@ Utiliser composer pour installer toutes les dépendances dont le projet a besoin
 Configuration?
 --------------
 
-##app/config/config.yml
+###app/config/config.yml
 
 Déjà intégrer dans la config, saisir vos clés d'accès.
 ```yaml
@@ -27,7 +27,7 @@ endroid_twitter:
     access_token_secret: "..."
 ```
 
-##app/config/parameters.yml
+###app/config/parameters.yml
 
 ```yaml
 parameters:
@@ -43,7 +43,7 @@ parameters:
     secret: ...
 ```
 
-##Create Database Mysql
+###Create Database Mysql
 
 ```mysql
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
