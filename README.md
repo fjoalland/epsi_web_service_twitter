@@ -2,11 +2,23 @@ Web Service - API Twitter
 ========================
 Projet destiné au cours du web service a l'EPSI.
 
+Requirements?
+--------------
+
+* php
+* composer -> https://getcomposer.org/
+
+Installation?
+--------------
+Utiliser composer pour installer toutes les dépendances dont le projet a besoin.
+
+
 Configuration?
 --------------
 
-##config.yml
+##app/config/config.yml
 
+Déjà intégrer dans la config, saisir vos clés d'accès.
 ```yaml
 endroid_twitter:
     consumer_key: "..."
@@ -15,7 +27,7 @@ endroid_twitter:
     access_token_secret: "..."
 ```
 
-##parameters.yml
+##app/config/parameters.yml
 
 ```yaml
 parameters:
